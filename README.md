@@ -19,11 +19,11 @@ __You will need:__
 
 Since we're setting up a Grafana dashboard in this lab, we'll need to [install](https://grafana.com/docs/grafana/latest/installation/) Grafana. Please select your corresponding operating system and follow the instructions.
 
-Next, you'll want to [configure](https://grafana.com/docs/grafana/latest/administration/configuration/) Grafana. Again, follow the instructions for your operating system. As noted in the configuration guide, you'll need to remove comments in the .ini files by removing the ''';''' at the beginning of the lines you want to change.
+Next, you'll want to [configure](https://grafana.com/docs/grafana/latest/administration/configuration/) Grafana. Again, follow the instructions for your operating system. As noted in the configuration guide, you'll need to remove comments in the .ini files by removing the ```;``` at the beginning of the lines you want to change.
 
 ### Logging In
 
-1. Open your web browser and go to http://localhost:3000/. The default HTTP port that Grafana listens to is ```3000``` unless you configured a different port in the previous step. If you are not hosting Grafana locally, then go to http://[host]:3000/ instead.
+1. Open your web browser and go to http://localhost:3000/. The default HTTP port that Grafana listens to is ```3000``` unless you configured a different port in the previous step. If you are not hosting Grafana locally, then go to ```http://[host]:3000/``` instead.
 2. On the login page, enter ```admin``` as the username and password.
 3. Click **Log in**. If the login is successful, you will see a prompt to change the password.
 4. Click **OK** on the prompt, then change your password.

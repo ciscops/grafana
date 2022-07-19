@@ -2,16 +2,17 @@
 
 ## Getting Started
 
-These instructions will take you through the setting up a Grafana dashboard connected to a MongoDB data source.
+These instructions will take you through the setting up a Grafana dashboard connected to an InfluxDB data source using data from NodeRED.
 
 __In this lab you will__
 1. Set Up Grafana
-2. Connect to MongoDB Data Source
+2. Build InfluxDB database
+2. Connect to InfluxDB Data Source
 3. Create a basic Dashboard
 
 __You will need:__
 * Grafana
-* A MongoDB Database
+* InfluxDB v2.3 (at least v1.8+)
 
 ## Grafana Set Up
 
@@ -27,6 +28,36 @@ Next, you'll want to [configure](https://grafana.com/docs/grafana/latest/adminis
 2. On the login page, enter ```admin``` as the username and password.
 3. Click **Log in**. If the login is successful, you will see a prompt to change the password.
 4. Click **OK** on the prompt, then change your password.
+
+### Installing InfluxDB
+
+Before you start displaying data on your dashboard, you will need to first build a database that you can query your data from. We will be using InfluxDB to do this. Start by [installing](https://docs.influxdata.com/influxdb/v2.3/install/) InfluxDB v2.3 by selecting the corresponding operating system and following the instructions to download and install both InfluxDB and the influxCLI. Once you get to the **Start InfluxDB** section, if ```./influxd``` command not working, check to see if the influxd.exe is in the current directory. If not, you may need to ```cd``` into influxdb2-2.3.0-windows-amd64 before running the command 
+
+You have the option of setting up InfluxDB either through the UI or CLI. Note that in the latest version of InfluxDB (v2.3), a bucket is a named location where time series data is stored. It’s similar to an InfluxDB v1.x “database,” but is a combination of both a database and a retention policy.
+
+### Add InfluxDB as a data source
+
+1. Move your cursor to the cog icon on the side menu which will show the configuration options.
+![alt text](images/data-sources.png)
+2. Click on **Data sources**. The data sources page opens showing a list of previously configured data sources for the Grafana instance.
+3. Click **Add data source** to see a list of all supported data sources.
+4. Select **InfluxDB** from the list of available data sources.
+5. On the Data Source configuration page, enter a **name** for your InfluxDB data source.
+6. Under **Query Language**, select **Flux**.
+7. Under **HTTP**, enter the following:
+    * **URL**: Your [InfluxDB URL](https://docs.influxdata.com/influxdb/v2.3/reference/urls/).
+    * **Access**: Server (default)
+8. Under **Auth**, turn the **Basic auth** toggle on. 
+9. Under **Basic Auth Details**, enter the username and password you made during your InfluxDB setup next to **User** and **Password** respectively.
+10. Under **InfluxDB Details**, enter the following:
+    * **Organization**: Your InfluxDB [organization ID](https://docs.influxdata.com/influxdb/v2.3/organizations/view-orgs/).
+    * **Token**: Your InfluxDB [API token](https://docs.influxdata.com/influxdb/v2.3/security/tokens/).
+    * **Default Bucket**: The default [bucket](https://docs.influxdata.com/influxdb/v2.3/organizations/buckets/) to use in Flux queries.
+    * **Min time interval**: The [Grafana minimum time interval](https://grafana.com/docs/grafana/latest/features/datasources/influxdb/#min-time-interval). Default is ```10s```
+    * **Max series**: The maximum number of series or tables Grafana will process. Default is ```1000```.
+11. Click **Save & Test**. Grafana attempts to connect to the InfluxDB 2.3 datasource and returns the results of the test.
+
+
 
 ### Creating a Dashboard
 

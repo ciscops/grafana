@@ -31,7 +31,9 @@ Next, you'll want to [configure](https://grafana.com/docs/grafana/latest/adminis
 
 ### Installing InfluxDB
 
-Before you start displaying data on your dashboard, you will need to first build a database that you can query your data from. We will be using InfluxDB to do this. Start by [installing](https://docs.influxdata.com/influxdb/v2.3/install/) InfluxDB v2.3 by selecting the corresponding operating system and following the instructions to download and install both InfluxDB and the influxCLI. Once you get to the **Start InfluxDB** section, if ```./influxd``` command not working, check to see if the influxd.exe is in the current directory. If not, you may need to ```cd``` into influxdb2-2.3.0-windows-amd64 before running the command 
+Before you start displaying data on your dashboard, you will need to first build a database that you can query your data from. We will be using InfluxDB to do this. Start by [installing](https://docs.influxdata.com/influxdb/v2.3/install/) InfluxDB v2.3 by selecting the corresponding operating system and following the instructions to download and install both InfluxDB and the influxCLI.
+
+Once you get to the **Start InfluxDB** section, if ```./influxd``` command not working, check to see if the influxd.exe is in the current directory. If not, you may need to ```cd``` into influxdb2-2.3.0-windows-amd64 before running the command 
 
 You have the option of setting up InfluxDB either through the UI or CLI. Note that in the latest version of InfluxDB (v2.3), a bucket is a named location where time series data is stored. It’s similar to an InfluxDB v1.x “database,” but is a combination of both a database and a retention policy.
 
@@ -58,10 +60,20 @@ You have the option of setting up InfluxDB either through the UI or CLI. Note th
 11. Click **Save & Test**. Grafana attempts to connect to the InfluxDB 2.3 datasource and returns the results of the test.
 
 
-
 ### Creating a Dashboard
 
-1. Click the **+** icon on the side menu.
-2. On the dashboard, click **Add an empty panel**.
-
+1. Click the **New dashboard** item under the **Dashboards** icon in the side menu.
+2. On the dashboard, click **Add a new panel**.
 ![alt text](images/make-grafana-dashboard.gif "Make Grafana Dashboard")
+3. Under the **Query** tab, select your InfluxDB data source from the data source selector.
+4. In the following box, use [Flux](https://docs.influxdata.com/influxdb/v2.3/query-data/get-started/query-influxdb/) to query data from InfluxDB.
+    * You can also use the InfluxDB GUI to help you generate your query by selecting the ```_measurement``` and ```_field``` you want to pull from your database. 
+    * Click **Submit** on the right side to see a visualization of your query, and the **Script Editor** button will generate the query in Flux.
+    * Then copy and paste the Flux query into the box in Grafana.
+5. On the right side there is an option pane where you can change the type of visualization, add a panel title, and edit other panel settings.
+6. Once you've finished making the panel, click **Save** at the top right of your screen to save the dashboard.
+7. Add a name for your dashboard, then click **Save**.
+
+Congratulations, you have created your first dashboard and it is displaying results!
+
+

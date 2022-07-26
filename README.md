@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-These instructions will take you through the setting up a Grafana dashboard connected to an InfluxDB data source using data from NodeRED.
+These instructions will take you through setting up a Grafana dashboard connected to an InfluxDB data source using data from NodeRED.
 
 __In this lab you will__
 1. Set Up Grafana

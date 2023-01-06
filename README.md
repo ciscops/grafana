@@ -18,7 +18,7 @@ __You will need:__
 
 ### Installing Grafana
 
-Since we're setting up a Grafana dashboard in this lab, we'll need to [install](https://grafana.com/docs/grafana/latest/installation/) Grafana. Please select your corresponding operating system and follow the instructions.
+Since we're setting up a Grafana dashboard in this lab, we'll need to [install](https://grafana.com/docs/grafana/latest/installation/) Grafana. Please select your corresponding operating system and follow the instructions. Note: If you are using Debian, install [here](https://computingforgeeks.com/how-to-install-grafana-on-debian-linux/) instead.
 
 Next, you'll want to [configure](https://grafana.com/docs/grafana/latest/administration/configuration/) Grafana. Again, follow the instructions for your operating system. As noted in the configuration guide, you'll need to remove comments in the .ini files by removing the ```;``` at the beginning of the lines you want to change.
 

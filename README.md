@@ -31,7 +31,7 @@ Next, you'll want to [configure](https://grafana.com/docs/grafana/latest/adminis
 
 ### Installing InfluxDB
 
-Before you start displaying data on your dashboard, you will need to first build a database that you can query your data from. We will be using InfluxDB to do this. Start by [installing](https://docs.influxdata.com/influxdb/v2.3/install/) InfluxDB v2.3 by selecting the corresponding operating system and following the instructions to download and install both InfluxDB and the influxCLI.
+Before you start displaying data on your dashboard, you will need to first build a database that you can query your data from. We will be using InfluxDB to do this. Start by [installing](https://portal.influxdata.com/downloads/) InfluxDB v2.3 by selecting the corresponding operating system and following the instructions to download and install both InfluxDB and the influxCLI.
 
 Once you get to the **Start InfluxDB** section, if ```./influxd``` command not working, check to see if the influxd.exe is in the current directory. If not, you may need to ```cd``` into influxdb2-2.3.0-windows-amd64 before running the command 
 
